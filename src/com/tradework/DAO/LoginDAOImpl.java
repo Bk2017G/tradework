@@ -45,9 +45,9 @@ public class LoginDAOImpl implements LoginDAO {
 	    }catch(Exception exception) {
 	    	throw exception;
 	    }finally {
-	    	if(session.isOpen()||session!=null) {
-	    		session.close();
-	    	}
+//	    	if(session!=null || session.isOpen()) {
+//	    		session.close();
+//	    	}
 	    }
 		return loginBean;
 	}
