@@ -11,11 +11,18 @@ public class LoginBean {
 	
 	private int userId;
 	private String userName;
+	private String message;
 	/**
 	 * @return the userId
 	 */
 	public int getUserId() {
 		return userId;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	/**
 	 * @param userId the userId to set
