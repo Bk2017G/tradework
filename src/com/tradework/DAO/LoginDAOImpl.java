@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import com.tradework.bean.LoginBean;
+import com.tradework.entity.LoginEntity;
 import com.tradework.resources.HibernateUtility;
 
 /**
@@ -28,12 +29,25 @@ public class LoginDAOImpl implements LoginDAO {
 	    	sessionFactory = HibernateUtility.createSessionFactory();
 	    	session = sessionFactory.openSession();
 	    	
+	    	LoginEntity le =(LoginEntity) session.get(LoginEntity.class, userName);
+	    	if(le!=null) {
+	    		loginBean = new LoginBean();
+	    		loginBean.setUserId(le.getUserid());
+	    		loginBean.setUserName(le.getUsername());
+	    	}else {
+	    		loginBean = new LoginBean();
+	    		loginBean.setUserId(-1);
+	    		loginBean.setUserName("UNDEFINED");
+	    	}
+	    	
 	    }catch(HibernateException exception) {
 	    	throw new Exception("DAO.Technical_Error");
 	    }catch(Exception exception) {
 	    	throw exception;
 	    }finally {
-	    	
+//	    	if(session!=null || session.isOpen()) {
+//	    		session.close();
+//	    	}
 	    }
 		return loginBean;
 	}

@@ -39,7 +39,7 @@ public class userAPI {
 
 				LoginBean bean = service.getLogin(loginBean);
 				
-				if(bean.getUserName().equals(loginBean)) {
+				if(bean.getUserName().equals(loginBean.getUserName())) {
 					String succesString = this
 							.getLoginSuccess(loginBean);
 					loginBean.setMessage(succesString);
@@ -49,8 +49,7 @@ public class userAPI {
 							.build();
 				}
 				else {
-					String succesString = this
-							.getLoginSuccess(loginBean);
+					String succesString = "YOU ARE UNAUTHORISED";
 					loginBean.setMessage(succesString);
 
 					String returnString = JSONParser.toJson(loginBean);
