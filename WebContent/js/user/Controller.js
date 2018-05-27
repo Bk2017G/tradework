@@ -26,7 +26,7 @@ application.controller("LoginController",
 					}
 				else
 					{
-					$scope.loginUser.message ="Wrong Name"
+					$scope.loginUser.message ="Wrong NAME"
 					
 					}
 					
