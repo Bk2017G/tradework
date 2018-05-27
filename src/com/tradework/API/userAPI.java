@@ -22,7 +22,7 @@ import com.tradework.resources.JSONParser;
 @Path("User")
 public class userAPI {
 
-		@Path("Login")
+		@Path("/Login")
 		@POST
 		@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 		@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
