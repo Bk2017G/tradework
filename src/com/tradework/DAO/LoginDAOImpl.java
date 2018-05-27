@@ -7,6 +7,6 @@ package com.tradework.DAO;
  * @author Super
  *
  */
-public interface LoginDAO {
+public class LoginDAOImpl implements LoginDAO {
 
 }
