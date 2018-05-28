@@ -27,7 +27,6 @@ public class userAPI{
 			Response response = null;
 			String successMessage=null;
 			String returnString=null;
-			System.out.print("hello sau");
 			try {
 				
 				LoginBean loginBean = JSONParser.fromJson( dataRecieved ,LoginBean.class);
@@ -75,5 +74,14 @@ public class userAPI{
 			String message=AppConfig.PROPERTIES.getProperty("ADMINAPI.SIGNIN_SUCCESS");
 			return message;
 		}
+	public static void main(String[] args) {
+		userAPI api = new userAPI();
+		try {
+			System.out.println(api.userLogin("hi"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
 
