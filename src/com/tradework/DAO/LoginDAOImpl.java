@@ -31,7 +31,6 @@ public class LoginDAOImpl implements LoginDAO {
 	    	
 	    	LoginEntity le =(LoginEntity) session.get(LoginEntity.class, userName);
 	    	if(le!=null) {
-	    		
 	    		loginBean = new LoginBean();
 	    		loginBean.setUserId(le.getUserid());
 	    		loginBean.setUserName(le.getUsername());
@@ -46,11 +45,10 @@ public class LoginDAOImpl implements LoginDAO {
 	    }catch(Exception exception) {
 	    	throw exception;
 	    }finally {
-//	    	if(session!=null || session.isOpen()) {
-//	    		session.close();
-//	    	}
+	    	if( session.isOpen()|| session!=null) {
+	    		session.close();
+	    	}
 	    }
-	    System.out.println("Hi there "+loginBean.getUserId()+" "+loginBean.getUserName());
 		return loginBean;
 	}
 

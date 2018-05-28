@@ -5,6 +5,9 @@ package com.tradework.API;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import org.glassfish.jersey.server.ResourceConfig;
+
 import javax.ws.rs.Consumes;
 //import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -19,9 +22,12 @@ import com.tradework.resources.Factory;
 import com.tradework.resources.JSONParser;
 
 
-@Path("User")
-public class userAPI {
-
+@Path("TradeWork")
+public class userAPI extends ResourceConfig {
+		public userAPI() {
+			packages("com.tradework.API");
+		
+		}
 		@Path("/Login")
 		@POST
 		@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
