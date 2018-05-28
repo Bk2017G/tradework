@@ -1,6 +1,6 @@
 var config={
 		"protocol" : "http",
-		"port" : "8080",
+		"port" : "9090",
 		"domain" : "localhost",
 		"project" : "TradeWork"
 }
@@ -11,5 +11,5 @@ var config={
  */
 
 function getURI(){
-	return config.protocol +"://"+ config.domain +":"+ config.port +"/"+ config.project +"/api/" ;
+	return config.protocol +"://"+ config.domain +":"+ config.port +"/"+ config.project +"/API/" ;
 }
