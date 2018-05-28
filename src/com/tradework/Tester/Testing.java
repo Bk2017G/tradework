@@ -20,10 +20,14 @@ public class Testing {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LoginBean bean = new LoginBean();
-		bean.setUserName("andy");
+		bean.setUserName("saurabh");
 		try {
 			LoginService loginService =Factory.createLoginService();
 			LoginBean bean2=loginService.getLogin(bean);
+			System.out.println(bean2.getUserId()+" "+bean2.getUserName());
+			bean.setUserName("Abhishek");
+			bean2=loginService.getLogin(bean);
+			
 			System.out.println(bean2.getUserId()+" "+bean2.getUserName());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

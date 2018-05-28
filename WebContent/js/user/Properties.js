@@ -1,6 +1,6 @@
 var config={
 		"protocol" : "http",
-		"port" : "8765",
+		"port" : "8080",
 		"domain" : "localhost",
 		"project" : "TradeWork"
 }
