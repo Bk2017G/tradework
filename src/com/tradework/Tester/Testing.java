@@ -39,7 +39,7 @@ public class Testing {
 			dao.giveAllEquityShares();
 			dao.giveAllSellShares();
 			data = JSONParser.toJson(bean2);
-			api.userLogin(data);
+			System.out.println(api.userLogin(data));
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
