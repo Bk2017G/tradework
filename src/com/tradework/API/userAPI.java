@@ -49,6 +49,7 @@ public class userAPI{
 						loginBean.setMessage(bean.getMessage());
 						returnString=JSONParser.toJson(loginBean);
 					}
+					System.out.println(returnString);
 				response=Response.status(Status.OK).entity(returnString).build();
 				}//try
 			catch(Exception e) {

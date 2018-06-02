@@ -17,9 +17,17 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtility {
 	
 	private static final String CONFIGURATION_LOCATION = "com/tradework/resources/hibernate.cfg.xml";
-	private static SessionFactory sessionFactory = getSessionFactory();
+	private static SessionFactory sessionFactory;
 
-	private static SessionFactory getSessionFactory() {
+	static {
+		try {
+			sessionFactory = getSessionFactory();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private static SessionFactory getSessionFactory() throws Exception{
 		try {
 			if (sessionFactory==null) {
 
@@ -42,7 +50,7 @@ public class HibernateUtility {
 		return sessionFactory;
 	}
 
-	public static SessionFactory createSessionFactory() {
+	public static SessionFactory createSessionFactory() throws Exception {
 		return getSessionFactory();
 	}
 
