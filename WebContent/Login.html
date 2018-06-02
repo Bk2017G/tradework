@@ -2,18 +2,34 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Bean Trade</title>
+<!-- ******************************************************** -->
+<script src="js/shared/jquery.js"></script>
+<script src="js/shared/bootstrap.js"></script>
+<script src="js/shared/angular.js"></script>
+<script src="js/shared/angular-route.js"></script>
+<script src="js/user/Properties.js"></script>
+<script src="js/user/Application.js"></script>
+<script src="js/user/Controller.js"></script>
+<!-- ******************************************************** -->
 </head>
-<body ng-app="Application" ng-controller="LoginController">
+<body ng-app="Application">
+	<div ng-controller="LoginController">
+		<form ng-submit="submitLoginUser()">
+		
 					<div class="form-group">
 										<label>UserName</label> <input type="String"
 											class="form-control" 
-											ng-model="" required="required" />
+											ng-model="loginUser.userName" required="required" />
 											
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary form-control">Login</button>
 					</div>
-
+					<!-- <div class="form-group">
+						<label ng-model="loginUser.name">{{$scope.loginUser.message}}</label>
+					</div> -->
+		</form>
+	</div>
 </body>
 </html>
