@@ -3,10 +3,12 @@
  */
 package com.tradework.Tester;
 
+import com.tradework.API.userAPI;
 import com.tradework.DAO.LoginDAO;
 import com.tradework.bean.LoginBean;
 import com.tradework.business.service.LoginService;
 import com.tradework.resources.Factory;
+import com.tradework.resources.JSONParser;
 
 
 /**
@@ -23,6 +25,8 @@ public class Testing {
 		LoginBean bean = new LoginBean();
 		bean.setUserName("saurabh");
 		LoginDAO dao = Factory.createLoginDAO();
+		userAPI api = new userAPI();
+		String data = null;
 		try {
 			LoginService loginService =Factory.createLoginService();
 			LoginBean bean2=loginService.getLogin(bean);
@@ -34,6 +38,8 @@ public class Testing {
 			dao.giveAllBuyShares();
 			dao.giveAllEquityShares();
 			dao.giveAllSellShares();
+			data = JSONParser.toJson(bean2);
+			api.userLogin(data);
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
