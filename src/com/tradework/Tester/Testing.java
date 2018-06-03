@@ -3,9 +3,12 @@
  */
 package com.tradework.Tester;
 
+import java.util.List;
+
 import com.tradework.API.userAPI;
 import com.tradework.DAO.LoginDAO;
 import com.tradework.bean.LoginBean;
+import com.tradework.bean.PlaceOrderUpstoxBean;
 import com.tradework.business.service.LoginService;
 import com.tradework.resources.Factory;
 import com.tradework.resources.JSONParser;
@@ -39,6 +42,18 @@ public class Testing {
 			dao.giveAllEquityShares();
 			dao.giveAllSellShares();
 			data = JSONParser.toJson(bean2);
+			/*PlaceOrderUpstoxBean orderUpstoxBean = new PlaceOrderUpstoxBean();
+			orderUpstoxBean.setTransaction_type('b');
+			orderUpstoxBean.setExchange("NSE_EQ");
+			orderUpstoxBean.setSymbol("YES BANK");
+			orderUpstoxBean.setQuantity(50);
+			orderUpstoxBean.setOrder_type("m");
+			orderUpstoxBean.setProduct("I");*/
+			List<PlaceOrderUpstoxBean> orderUpstoxBeans =  loginService.intraday_Trade();
+			for (PlaceOrderUpstoxBean orderUpstoxBean : orderUpstoxBeans) {
+				System.out.println(JSONParser.toJson(orderUpstoxBean));
+			}
+			
 			System.out.println(api.userLogin(data));
 			
 		} catch (Exception e) {
