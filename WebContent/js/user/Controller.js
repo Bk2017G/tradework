@@ -5,21 +5,21 @@ application.controller("LoginController",
 			$scope.loginUser.message=null;
 
 			$scope.submitLoginUser = function() {
-			alert("haye");
 			
-//				response=$scope.loginUser.name;
 				alert("controller");
 				var data = JSON.stringify($scope.loginUser);
 				alert(data);
-				$scope.loginUser.message=null;
-				$http.put(URI+"TradeWork/Login", data).then(function(response) {
-					alert(response.data.message);
+				alert($scope.loginUser.message="success to api");
+				
+				$http.put(URI+"/TradeWork/Login", data).then(function(response) {
+					alert("inside api"+response.data.message);
 					if(response.data.userName==$scope.loginUser.userName){
 						swal({title:response.data.message,text:"click ok to proceed",type:"success"},
 						function(){
 							$window.location.href="logged.html";});
 						}
 					else{
+						alert("inside else");
 						$scope.loginUser.message=response.data.message;
 					}
 					

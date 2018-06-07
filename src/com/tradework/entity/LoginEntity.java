@@ -14,32 +14,23 @@ import javax.persistence.Id;
 @Table(name="BeanTrade")
 public class LoginEntity {
 	
-	private int userid;
+	private int userId;
 	@Id
-	private String username;
+	private String userName;
 	/**
 	 * @return the userid
 	 */
-	public int getUserid() {
-		return userid;
+	public int getUserId() {
+		return userId;
 	}
-	/**
-	 * @param userid the userid to set
-	 */
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	/**
-	 * @return the username
-	 */
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
-	/**
-	 * @param username the username to set
-	 */
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	
 	
