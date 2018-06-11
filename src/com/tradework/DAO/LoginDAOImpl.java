@@ -29,7 +29,7 @@ public class LoginDAOImpl implements LoginDAO {
 	/**
 	 * This Function will retrieve user data from database
 	 */
-	@Override
+	
 	public LoginBean checkLogin(String userName) throws Exception {
 		SessionFactory sessionFactory=null;
 	    Session session=null;
@@ -64,7 +64,6 @@ public class LoginDAOImpl implements LoginDAO {
 	 * This function will take all the data for EquityShares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<EquitySharesBean> giveAllEquityShares() throws Exception {
 		
 		SessionFactory sessionFactory = null;
@@ -114,7 +113,7 @@ public class LoginDAOImpl implements LoginDAO {
 	 * This function will take all the data for Buying Shares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
+	
 	public List<BuyShares> giveAllBuyShares() throws Exception {
 		SessionFactory sessionFactory = null;
 		Session session = null;
@@ -145,7 +144,7 @@ public class LoginDAOImpl implements LoginDAO {
 	 * This function will take all the data for Selling Shares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
+	
 	public List<SellShares> giveAllSellShares() throws Exception {
 		SessionFactory sessionFactory =null;
 		Session session = null;

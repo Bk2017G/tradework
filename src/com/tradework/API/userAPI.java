@@ -24,6 +24,7 @@ public class userAPI{
 		@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 		@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 		public Response userLogin(String dataRecieved) throws Exception {
+			System.out.println("@@@@@@@@@@@@@@@@@@2");
 			Response response = null;
 			String successMessage=null;
 			String returnString=null;

@@ -17,13 +17,11 @@ import com.tradework.resources.Factory;
  */
 public class LoginServiceImpl implements LoginService {
 
-	@Override
 	public LoginBean getLogin(LoginBean loginBean) throws Exception {
 		// TODO Auto-generated method stub
 		return Factory.createLoginDAO().checkLogin(loginBean.getUserName());
 	}
 
-	@Override
 	public List<PlaceOrderUpstoxBean> intraday_Trade() throws Exception {
 		List<EquitySharesBean> listEquity = Factory.createLoginDAO().giveAllEquityShares();
 		List<PlaceOrderUpstoxBean> orderUpstoxBeans = new ArrayList<PlaceOrderUpstoxBean>();
