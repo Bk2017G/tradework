@@ -889,81 +889,81 @@ public class EquityShares {
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-//	@Override
-//	public String toString() {
-//		return "EquityShares [id=" + id + ", " + (Symbol != null ? "Symbol=" + Symbol + ", " : "")
-//				+ (GMMA != null ? "GMMA=" + GMMA + ", " : "") + (ADX_DMI != null ? "ADX_DMI=" + ADX_DMI + ", " : "")
-//				+ (TrendLine != null ? "TrendLine=" + TrendLine + ", " : "")
-//				+ (BuySell != null ? "BuySell=" + BuySell + ", " : "") + (Swing != null ? "Swing=" + Swing + ", " : "")
-//				+ (FiboBuySell != null ? "FiboBuySell=" + FiboBuySell + ", " : "")
-//				+ (FiboPriceatTrigger != null ? "FiboPriceatTrigger=" + FiboPriceatTrigger + ", " : "")
-//				+ (FiboStopLoss != null ? "FiboStopLoss=" + FiboStopLoss + ", " : "")
-//				+ (FiboFirstTarget != null ? "FiboFirstTarget=" + FiboFirstTarget + ", " : "")
-//				+ (FiboSecondTarget != null ? "FiboSecondTarget=" + FiboSecondTarget + ", " : "")
-//				+ (PerformanceCheckSignal != null ? "PerformanceCheckSignal=" + PerformanceCheckSignal + ", " : "")
-//				+ (AppelROCSignal != null ? "AppelROCSignal=" + AppelROCSignal + ", " : "")
-//				+ (VolumeOscillatorSignal != null ? "VolumeOscillatorSignal=" + VolumeOscillatorSignal + ", " : "")
-//				+ (GordonRoseSignal != null ? "GordonRoseSignal=" + GordonRoseSignal + ", " : "")
-//				+ (RSIValue != null ? "RSIValue=" + RSIValue + ", " : "")
-//				+ (VolumeAdverseRatio != null ? "VolumeAdverseRatio=" + VolumeAdverseRatio + ", " : "")
-//				+ (MACDSignal != null ? "MACDSignal=" + MACDSignal + ", " : "")
-//				+ (TLColSignal != null ? "TLColSignal=" + TLColSignal + ", " : "")
-//				+ (MagicalTrendIndicatorUpdate != null
-//						? "MagicalTrendIndicatorUpdate=" + MagicalTrendIndicatorUpdate + ", "
-//						: "")
-//				+ (MACDBlack != null ? "MACDBlack=" + MACDBlack + ", " : "")
-//				+ (GordonRoseIndicator != null ? "GordonRoseIndicator=" + GordonRoseIndicator + ", " : "")
-//				+ (BuySellSignal != null ? "BuySellSignal=" + BuySellSignal + ", " : "")
-//				+ (DailyAverageBearVol != null ? "DailyAverageBearVol=" + DailyAverageBearVol + ", " : "")
-//				+ (DailyAverageBullVol != null ? "DailyAverageBullVol=" + DailyAverageBullVol + ", " : "")
-//				+ (DailyPivot != null ? "DailyPivot=" + DailyPivot + ", " : "")
-//				+ (DailyResistance1 != null ? "DailyResistance1=" + DailyResistance1 + ", " : "")
-//				+ (DailyResistance2 != null ? "DailyResistance2=" + DailyResistance2 + ", " : "")
-//				+ (DailyResistance3 != null ? "DailyResistance3=" + DailyResistance3 + ", " : "")
-//				+ (DailySupport1 != null ? "DailySupport1=" + DailySupport1 + ", " : "")
-//				+ (DailySupport2 != null ? "DailySupport2=" + DailySupport2 + ", " : "")
-//				+ (DailySupport3 != null ? "DailySupport3=" + DailySupport3 + ", " : "")
-//				+ (Definite != null ? "Definite=" + Definite + ", " : "") + (HH != null ? "HH=" + HH + ", " : "")
-//				+ (HL != null ? "HL=" + HL + ", " : "") + (LH != null ? "LH=" + LH + ", " : "")
-//				+ (LL != null ? "LL=" + LL + ", " : "") + (LongMA_100 != null ? "LongMA_100=" + LongMA_100 + ", " : "")
-//				+ (MA_5 != null ? "MA_5=" + MA_5 + ", " : "") + (MidMA_45 != null ? "MidMA_45=" + MidMA_45 + ", " : "")
-//				+ (MonthlyPivot != null ? "MonthlyPivot=" + MonthlyPivot + ", " : "")
-//				+ (MonthlyResistance1 != null ? "MonthlyResistance1=" + MonthlyResistance1 + ", " : "")
-//				+ (MonthlyResistance2 != null ? "MonthlyResistance2=" + MonthlyResistance2 + ", " : "")
-//				+ (MonthlyResistance3 != null ? "MonthlyResistance3=" + MonthlyResistance3 + ", " : "")
-//				+ (MonthlySupport1 != null ? "MonthlySupport1=" + MonthlySupport1 + ", " : "")
-//				+ (MonthlySupport2 != null ? "MonthlySupport2=" + MonthlySupport2 + ", " : "")
-//				+ (MonthlySupport3 != null ? "MonthlySupport3=" + MonthlySupport3 + ", " : "")
-//				+ (PDI_Val != null ? "PDI_Val=" + PDI_Val + ", " : "")
-//				+ (PatternChannel != null ? "PatternChannel=" + PatternChannel + ", " : "")
-//				+ (TradeStageValue != null ? "TradeStageValue=" + TradeStageValue + ", " : "")
-//				+ (TrendAdvisor != null ? "TrendAdvisor=" + TrendAdvisor + ", " : "")
-//				+ (WeeklyPivot != null ? "WeeklyPivot=" + WeeklyPivot + ", " : "")
-//				+ (WeeklyResistance1 != null ? "WeeklyResistance1=" + WeeklyResistance1 + ", " : "")
-//				+ (WeeklyResistance2 != null ? "WeeklyResistance2=" + WeeklyResistance2 + ", " : "")
-//				+ (WeeklyResistance3 != null ? "WeeklyResistance3=" + WeeklyResistance3 + ", " : "")
-//				+ (WeeklySupport1 != null ? "WeeklySupport1=" + WeeklySupport1 + ", " : "")
-//				+ (WeeklySupport2 != null ? "WeeklySupport2=" + WeeklySupport2 + ", " : "")
-//				+ (WeeklySupport3 != null ? "WeeklySupport3=" + WeeklySupport3 + ", " : "")
-//				+ (LastTrend != null ? "LastTrend=" + LastTrend + ", " : "")
-//				+ (AverageTruePriceRange != null ? "AverageTruePriceRange=" + AverageTruePriceRange + ", " : "")
-//				+ (PriceReverseValue != null ? "PriceReverseValue=" + PriceReverseValue + ", " : "")
-//				+ (ClosePrice != null ? "ClosePrice=" + ClosePrice + ", " : "")
-//				+ (SDate != null ? "SDate=" + SDate + ", " : "") + (EMA_9 != null ? "EMA_9=" + EMA_9 + ", " : "")
-//				+ (LongEMA_52 != null ? "LongEMA_52=" + LongEMA_52 + ", " : "")
-//				+ (MidEMA_20 != null ? "MidEMA_20=" + MidEMA_20 : "") + "]";
-//	}
+	@Override
+	public String toString() {
+		return "EquityShares [id=" + id + ", " + (Symbol != null ? "Symbol=" + Symbol + ", " : "")
+				+ (GMMA != null ? "GMMA=" + GMMA + ", " : "") + (ADX_DMI != null ? "ADX_DMI=" + ADX_DMI + ", " : "")
+				+ (TrendLine != null ? "TrendLine=" + TrendLine + ", " : "")
+				+ (BuySell != null ? "BuySell=" + BuySell + ", " : "") + (Swing != null ? "Swing=" + Swing + ", " : "")
+				+ (FiboBuySell != null ? "FiboBuySell=" + FiboBuySell + ", " : "")
+				+ (FiboPriceatTrigger != null ? "FiboPriceatTrigger=" + FiboPriceatTrigger + ", " : "")
+				+ (FiboStopLoss != null ? "FiboStopLoss=" + FiboStopLoss + ", " : "")
+				+ (FiboFirstTarget != null ? "FiboFirstTarget=" + FiboFirstTarget + ", " : "")
+				+ (FiboSecondTarget != null ? "FiboSecondTarget=" + FiboSecondTarget + ", " : "")
+				+ (PerformanceCheckSignal != null ? "PerformanceCheckSignal=" + PerformanceCheckSignal + ", " : "")
+				+ (AppelROCSignal != null ? "AppelROCSignal=" + AppelROCSignal + ", " : "")
+				+ (VolumeOscillatorSignal != null ? "VolumeOscillatorSignal=" + VolumeOscillatorSignal + ", " : "")
+				+ (GordonRoseSignal != null ? "GordonRoseSignal=" + GordonRoseSignal + ", " : "")
+				+ (RSIValue != null ? "RSIValue=" + RSIValue + ", " : "")
+				+ (VolumeAdverseRatio != null ? "VolumeAdverseRatio=" + VolumeAdverseRatio + ", " : "")
+				+ (MACDSignal != null ? "MACDSignal=" + MACDSignal + ", " : "")
+				+ (TLColSignal != null ? "TLColSignal=" + TLColSignal + ", " : "")
+				+ (MagicalTrendIndicatorUpdate != null
+						? "MagicalTrendIndicatorUpdate=" + MagicalTrendIndicatorUpdate + ", "
+						: "")
+				+ (MACDBlack != null ? "MACDBlack=" + MACDBlack + ", " : "")
+				+ (GordonRoseIndicator != null ? "GordonRoseIndicator=" + GordonRoseIndicator + ", " : "")
+				+ (BuySellSignal != null ? "BuySellSignal=" + BuySellSignal + ", " : "")
+				+ (DailyAverageBearVol != null ? "DailyAverageBearVol=" + DailyAverageBearVol + ", " : "")
+				+ (DailyAverageBullVol != null ? "DailyAverageBullVol=" + DailyAverageBullVol + ", " : "")
+				+ (DailyPivot != null ? "DailyPivot=" + DailyPivot + ", " : "")
+				+ (DailyResistance1 != null ? "DailyResistance1=" + DailyResistance1 + ", " : "")
+				+ (DailyResistance2 != null ? "DailyResistance2=" + DailyResistance2 + ", " : "")
+				+ (DailyResistance3 != null ? "DailyResistance3=" + DailyResistance3 + ", " : "")
+				+ (DailySupport1 != null ? "DailySupport1=" + DailySupport1 + ", " : "")
+				+ (DailySupport2 != null ? "DailySupport2=" + DailySupport2 + ", " : "")
+				+ (DailySupport3 != null ? "DailySupport3=" + DailySupport3 + ", " : "")
+				+ (Definite != null ? "Definite=" + Definite + ", " : "") + (HH != null ? "HH=" + HH + ", " : "")
+				+ (HL != null ? "HL=" + HL + ", " : "") + (LH != null ? "LH=" + LH + ", " : "")
+				+ (LL != null ? "LL=" + LL + ", " : "") + (LongMA_100 != null ? "LongMA_100=" + LongMA_100 + ", " : "")
+				+ (MA_5 != null ? "MA_5=" + MA_5 + ", " : "") + (MidMA_45 != null ? "MidMA_45=" + MidMA_45 + ", " : "")
+				+ (MonthlyPivot != null ? "MonthlyPivot=" + MonthlyPivot + ", " : "")
+				+ (MonthlyResistance1 != null ? "MonthlyResistance1=" + MonthlyResistance1 + ", " : "")
+				+ (MonthlyResistance2 != null ? "MonthlyResistance2=" + MonthlyResistance2 + ", " : "")
+				+ (MonthlyResistance3 != null ? "MonthlyResistance3=" + MonthlyResistance3 + ", " : "")
+				+ (MonthlySupport1 != null ? "MonthlySupport1=" + MonthlySupport1 + ", " : "")
+				+ (MonthlySupport2 != null ? "MonthlySupport2=" + MonthlySupport2 + ", " : "")
+				+ (MonthlySupport3 != null ? "MonthlySupport3=" + MonthlySupport3 + ", " : "")
+				+ (PDI_Val != null ? "PDI_Val=" + PDI_Val + ", " : "")
+				+ (PatternChannel != null ? "PatternChannel=" + PatternChannel + ", " : "")
+				+ (TradeStageValue != null ? "TradeStageValue=" + TradeStageValue + ", " : "")
+				+ (TrendAdvisor != null ? "TrendAdvisor=" + TrendAdvisor + ", " : "")
+				+ (WeeklyPivot != null ? "WeeklyPivot=" + WeeklyPivot + ", " : "")
+				+ (WeeklyResistance1 != null ? "WeeklyResistance1=" + WeeklyResistance1 + ", " : "")
+				+ (WeeklyResistance2 != null ? "WeeklyResistance2=" + WeeklyResistance2 + ", " : "")
+				+ (WeeklyResistance3 != null ? "WeeklyResistance3=" + WeeklyResistance3 + ", " : "")
+				+ (WeeklySupport1 != null ? "WeeklySupport1=" + WeeklySupport1 + ", " : "")
+				+ (WeeklySupport2 != null ? "WeeklySupport2=" + WeeklySupport2 + ", " : "")
+				+ (WeeklySupport3 != null ? "WeeklySupport3=" + WeeklySupport3 + ", " : "")
+				+ (LastTrend != null ? "LastTrend=" + LastTrend + ", " : "")
+				+ (AverageTruePriceRange != null ? "AverageTruePriceRange=" + AverageTruePriceRange + ", " : "")
+				+ (PriceReverseValue != null ? "PriceReverseValue=" + PriceReverseValue + ", " : "")
+				+ (ClosePrice != null ? "ClosePrice=" + ClosePrice + ", " : "")
+				+ (SDate != null ? "SDate=" + SDate + ", " : "") + (EMA_9 != null ? "EMA_9=" + EMA_9 + ", " : "")
+				+ (LongEMA_52 != null ? "LongEMA_52=" + LongEMA_52 + ", " : "")
+				+ (MidEMA_20 != null ? "MidEMA_20=" + MidEMA_20 : "") + "]";
+	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
-	@Override
-	public String toString() {
-		String Symbol= this.Symbol+" "+TLColSignal;
-		if(TLColSignal.equalsIgnoreCase(Definite))
-			if(Symbol!=null) return Symbol;
-		return null;
-	}
-	
+//	@Override
+//	public String toString() {
+//		String Symbol= this.Symbol+" "+TLColSignal;
+//		if(TLColSignal.equalsIgnoreCase(Definite))
+//			if(Symbol!=null) return Symbol;
+//		return null;
+//	}
+//	
 	
 	
 	

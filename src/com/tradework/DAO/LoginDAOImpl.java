@@ -3,6 +3,7 @@
  */
 package com.tradework.DAO;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.tradework.bean.EquitySharesBean;
 import com.tradework.bean.LoginBean;
 import com.tradework.entity.BuyShares;
 import com.tradework.entity.EquityShares;
@@ -27,7 +29,7 @@ public class LoginDAOImpl implements LoginDAO {
 	/**
 	 * This Function will retrieve user data from database
 	 */
-	@Override
+	
 	public LoginBean checkLogin(String userName) throws Exception {
 		SessionFactory sessionFactory=null;
 	    Session session=null;
@@ -39,8 +41,8 @@ public class LoginDAOImpl implements LoginDAO {
 	    	LoginEntity le =(LoginEntity) session.get(LoginEntity.class, userName);
 	    	if(le!=null) {
 	    		loginBean = new LoginBean();
-	    		loginBean.setUserId(le.getUserid());
-	    		loginBean.setUserName(le.getUsername());
+	    		loginBean.setUserId(le.getUserId());
+	    		loginBean.setUserName(le.getUserName());
 	    	}else {
 	    		loginBean = new LoginBean();
 	    		loginBean.setUserId(-1);
@@ -62,12 +64,13 @@ public class LoginDAOImpl implements LoginDAO {
 	 * This function will take all the data for EquityShares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
-	public List<EquityShares> giveAllEquityShares() throws Exception {
+	public List<EquitySharesBean> giveAllEquityShares() throws Exception {
 		
 		SessionFactory sessionFactory = null;
 		Session session =null;
 		List<EquityShares> esEntityList =null;
+		List<EquitySharesBean> equitySharesBeans = new ArrayList<EquitySharesBean>();
+		EquitySharesBean sharesBean = null;
 		try {
 			sessionFactory = HibernateUtility.createSessionFactory();
 			session = sessionFactory.openSession();
@@ -75,7 +78,23 @@ public class LoginDAOImpl implements LoginDAO {
 			esEntityList = criteria.list();
 			for (Iterator<EquityShares> iterator = esEntityList.iterator(); iterator.hasNext();) {
 				EquityShares equityShares = (EquityShares) iterator.next();
-				System.out.println(equityShares.toString());
+				sharesBean = new EquitySharesBean();
+				if(equityShares.getSymbol() != null) sharesBean.setSymbol(equityShares.getSymbol());
+					else continue;
+				if(equityShares.getTLColSignal() != null) sharesBean.settLColSignal(equityShares.getTLColSignal());
+					else continue;
+				if(equityShares.getDefinite() != null) sharesBean.setDefinite(equityShares.getDefinite());
+					else continue;
+				if(equityShares.getClosePrice() != null) sharesBean.setClosePrice(Double.parseDouble(equityShares.getClosePrice()));
+					else continue;
+				if(equityShares.getEMA_9() != null) sharesBean.setShortBuy(Double.parseDouble(equityShares.getEMA_9()));
+					else continue;
+				if(equityShares.getLongEMA_52() != null) sharesBean.setLongSell(Double.parseDouble(equityShares.getLongEMA_52()));
+					else continue;
+				if(equityShares.getMidEMA_20() != null) sharesBean.setStopLoss(Double.parseDouble(equityShares.getMidEMA_20()));
+					else continue;
+				sharesBean.setId(sharesBean.getId());
+				equitySharesBeans.add(sharesBean);
 			}
 			
 		}catch(HibernateException exception) {
@@ -88,13 +107,13 @@ public class LoginDAOImpl implements LoginDAO {
 	    		session.close();
 	    	}
 	    }
-		return esEntityList;
+		return equitySharesBeans;
 	}
 	/**
 	 * This function will take all the data for Buying Shares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
+	
 	public List<BuyShares> giveAllBuyShares() throws Exception {
 		SessionFactory sessionFactory = null;
 		Session session = null;
@@ -125,7 +144,7 @@ public class LoginDAOImpl implements LoginDAO {
 	 * This function will take all the data for Selling Shares
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
+	
 	public List<SellShares> giveAllSellShares() throws Exception {
 		SessionFactory sessionFactory =null;
 		Session session = null;
