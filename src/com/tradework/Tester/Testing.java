@@ -53,8 +53,9 @@ public class Testing {
 			for (PlaceOrderUpstoxBean orderUpstoxBean : orderUpstoxBeans) {
 				System.out.println(JSONParser.toJson(orderUpstoxBean));
 			}
-			
+			System.out.println("****************************");
 			System.out.println(api.userLogin(data));
+			
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

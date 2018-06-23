@@ -5,6 +5,9 @@ package com.tradework.API;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
+
+import org.glassfish.jersey.server.ResourceConfig;
+
 import javax.ws.rs.Consumes;
 //import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,14 +20,14 @@ import com.tradework.resources.Factory;
 import com.tradework.resources.JSONParser;
 
 
-@Path("TradeWork")
+@Path("/Tradework")
 public class userAPI{
-		@Path("Login")
+	 
+		@Path("/Login")
 		@POST
 		@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 		@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
 		public Response userLogin(String dataRecieved) throws Exception {
-			System.out.println("@@@@@@@@@@@@@@@@@@2");
 			Response response = null;
 			String successMessage=null;
 			String returnString=null;
@@ -61,6 +64,7 @@ public class userAPI{
 				loginBean.setMessage(errorMessage);
 
 				 returnString = JSONParser.toJson(loginBean);
+				 System.out.println(returnString);
 
 				response = Response.status(Status.SERVICE_UNAVAILABLE)
 						.entity(returnString).build();

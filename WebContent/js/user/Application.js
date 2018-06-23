@@ -5,7 +5,6 @@ var application = angular.module("Application", [ "ngRoute" ]);
 //----------------------CONFIGURING THE APPLICATION------------------------
 
 application.config([ '$routeProvider', function(routeProvider) {
-	alert("application");
 	
 	routeProvider.when('/Login', {
 		templateUrl : 'Login.html',
