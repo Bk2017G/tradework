@@ -22,10 +22,13 @@ public class Testing {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		userAPI api = new userAPI();
+//		System.out.println(api.login());
+		
 		LoginBean bean = new LoginBean();
 		bean.setUserName("saurabh");
 		LoginDAO dao = Factory.createLoginDAO();
-		userAPI api = new userAPI();
+//		userAPI api = new userAPI();
 		String data = null;
 		try {
 			LoginService loginService =Factory.createLoginService();

@@ -11,5 +11,5 @@ var config={
  */
 
 function getURI(){
-	return config.protocol +"://"+ config.domain +":"+ config.port +"/"+ config.project +"/API/" ;
+	return config.protocol +"://"+ config.domain +":"+ config.port +"/"+ config.project +"/api/" ;
 }
