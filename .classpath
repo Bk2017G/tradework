@@ -71,4 +71,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
+=======
+>>>>>>> Develop
 </classpath>

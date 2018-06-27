@@ -3,13 +3,14 @@
  */
 package com.tradework.API;
 
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.Consumes;
-//import javax.ws.rs.GET;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -20,14 +21,25 @@ import com.tradework.resources.Factory;
 import com.tradework.resources.JSONParser;
 
 
+<<<<<<< HEAD
 @Path("/Tradework")
 public class userAPI{
 	 
+=======
+@Path("api")
+public class userAPI{
+	@GET
+    @Produces("text/plain")
+    public String getHello() {
+        return "<html><head><title>API OF TRADEWORK</title></head><body>If you are here just for fun we can show you awesome fun</body></html>";
+    }
+>>>>>>> Develop
 		@Path("/Login")
 		@POST
-		@Consumes(javax.ws.rs.core.MediaType.APPLICATION_JSON)
-		@Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+		@Produces(MediaType.APPLICATION_JSON)
+		@Consumes(MediaType.APPLICATION_JSON)
 		public Response userLogin(String dataRecieved) throws Exception {
+			
 			Response response = null;
 			String successMessage=null;
 			String returnString=null;
@@ -80,14 +92,5 @@ public class userAPI{
 			String message=AppConfig.PROPERTIES.getProperty("ADMINAPI.SIGNIN_SUCCESS");
 			return message;
 		}
-	public static void main(String[] args) {
-		userAPI api = new userAPI();
-		try {
-			System.out.println(api.userLogin("hi"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }
 

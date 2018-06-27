@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2018-06-02 09:34:27,857  DEBUG [main] com.tradework.resources.HibernateUtility [getSessionFactory] - Error calling Driver#connect
 org.hibernate.exception.JDBCConnectionException: Error calling Driver#connect
 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:132)
@@ -202,3 +203,5 @@ Caused by: java.lang.ClassNotFoundException: Could not load requested class : co
 	at java.lang.Class.forName(Unknown Source)
 	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:242)
 	... 18 more
+=======
+>>>>>>> Develop
