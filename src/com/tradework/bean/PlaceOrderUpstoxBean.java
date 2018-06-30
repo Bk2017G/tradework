@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tradework.bean;
+package src.com.tradework.bean;
 
 /**
  * @author super

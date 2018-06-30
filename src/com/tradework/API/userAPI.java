@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tradework.API;
+package src.com.tradework.API;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -14,18 +14,12 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import com.tradework.bean.LoginBean;
-import com.tradework.business.service.LoginService;
-import com.tradework.resources.AppConfig;
-import com.tradework.resources.Factory;
-import com.tradework.resources.JSONParser;
+import src.com.tradework.bean.LoginBean;
+import src.com.tradework.business.service.LoginService;
+import src.com.tradework.resources.AppConfig;
+import src.com.tradework.resources.Factory;
+import src.com.tradework.resources.JSONParser;
 
-
-<<<<<<< HEAD
-@Path("/Tradework")
-public class userAPI{
-	 
-=======
 @Path("api")
 public class userAPI{
 	@GET
@@ -33,7 +27,6 @@ public class userAPI{
     public String getHello() {
         return "<html><head><title>API OF TRADEWORK</title></head><body>If you are here just for fun we can show you awesome fun</body></html>";
     }
->>>>>>> Develop
 		@Path("/Login")
 		@POST
 		@Produces(MediaType.APPLICATION_JSON)

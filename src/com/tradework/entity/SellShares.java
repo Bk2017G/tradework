@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tradework.entity;
+package src.com.tradework.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.tradework.resources;
+package src.com.tradework.resources;
 
-import com.tradework.DAO.LoginDAOImpl;
-import com.tradework.business.service.LoginServiceImpl;
+import src.com.tradework.DAO.LoginDAOImpl;
+import src.com.tradework.business.service.LoginServiceImpl;
 
 /**
  * @author Super

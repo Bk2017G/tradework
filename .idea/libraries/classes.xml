@@ -1,0 +1,48 @@
+<component name="libraryTable">
+  <library name="classes">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/ehcache-core-2.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.ws.rs-api-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.persistence-2.1.0-RC2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-container-servlet-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/aopalliance-repackaged-2.5.0-b32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/org.osgi.core-4.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/persistence-api-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jboss-transaction-api_1.2_spec-1.0.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/antlr-2.7.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/osgi-resource-locator-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-client.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hibernate-ehcache-4.3.9.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hibernate-entitymanager-4.3.9.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.inject-2.5.0-b32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-guava-2.25.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jboss-logging-3.1.3.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/com.google.collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jaxb-api-2.2.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hk2-utils-2.5.0-b32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/xml-apis-1.0.b2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hibernate-commons-annotations-4.0.5.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hk2-locator-2.5.0-b32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hibernate-core-4.3.9.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hk2-api-2.5.0-b32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.servlet-api-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/validation-api-1.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.annotation-api-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jboss-logging-annotations-1.2.0.Beta1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jandex-1.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/javax.json-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-media-jaxb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/jersey-container-servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/apache-collections-commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/build/classes/hibernate-jpa-2.1-api-1.0.0.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

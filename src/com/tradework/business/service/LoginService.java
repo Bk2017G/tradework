@@ -1,12 +1,12 @@
 /**
  * 
  */
-package com.tradework.business.service;
+package src.com.tradework.business.service;
 
 import java.util.List;
 
-import com.tradework.bean.LoginBean;
-import com.tradework.bean.PlaceOrderUpstoxBean;
+import src.com.tradework.bean.LoginBean;
+import src.com.tradework.bean.PlaceOrderUpstoxBean;
 
 /**
  * @author Super

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tradework.resources;
+package src.com.tradework.resources;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
