@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src.com.tradework.resources;
+package com.tradework.resources;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package src.com.tradework.resources;
+package com.tradework.resources;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

@@ -1,17 +1,17 @@
 /**
  * 
  */
-package src.com.tradework.Tester;
+package com.tradework.Tester;
 
 import java.util.List;
 
-import src.com.tradework.API.userAPI;
-import src.com.tradework.DAO.LoginDAO;
-import src.com.tradework.bean.LoginBean;
-import src.com.tradework.bean.PlaceOrderUpstoxBean;
-import src.com.tradework.business.service.LoginService;
-import src.com.tradework.resources.Factory;
-import src.com.tradework.resources.JSONParser;
+import com.tradework.API.userAPI;
+import com.tradework.DAO.LoginDAO;
+import com.tradework.bean.LoginBean;
+import com.tradework.bean.PlaceOrderUpstoxBean;
+import com.tradework.business.service.LoginService;
+import com.tradework.resources.Factory;
+import com.tradework.resources.JSONParser;
 
 
 /**
@@ -20,11 +20,8 @@ import src.com.tradework.resources.JSONParser;
  */
 public class Testing {
 
-	/**
-	 * @param args
-	 */
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		userAPI api = new userAPI();
 //		System.out.println(api.login());
 		

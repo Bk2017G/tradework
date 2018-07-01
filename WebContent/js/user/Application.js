@@ -16,7 +16,7 @@ application.config([ '$routeProvider', function(routeProvider) {
 	});
 } ]);
 
-
+var URI = getURI();
 
 
 

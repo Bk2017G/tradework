@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src.com.tradework.Tester;
+package com.tradework.Tester;
 
 
 /**

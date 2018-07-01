@@ -1,15 +1,15 @@
 /**
  * 
  */
-package src.com.tradework.business.service;
+package com.tradework.business.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import src.com.tradework.bean.EquitySharesBean;
-import src.com.tradework.bean.LoginBean;
-import src.com.tradework.bean.PlaceOrderUpstoxBean;
-import src.com.tradework.resources.Factory;
+import com.tradework.bean.EquitySharesBean;
+import com.tradework.bean.LoginBean;
+import com.tradework.bean.PlaceOrderUpstoxBean;
+import com.tradework.resources.Factory;
 
 /**
  * @author dev

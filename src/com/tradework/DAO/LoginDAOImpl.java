@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src.com.tradework.DAO;
+package com.tradework.DAO;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,13 +12,13 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import src.com.tradework.bean.EquitySharesBean;
-import src.com.tradework.bean.LoginBean;
-import src.com.tradework.entity.BuyShares;
-import src.com.tradework.entity.EquityShares;
-import src.com.tradework.entity.LoginEntity;
-import src.com.tradework.entity.SellShares;
-import src.com.tradework.resources.HibernateUtility;
+import com.tradework.bean.EquitySharesBean;
+import com.tradework.bean.LoginBean;
+import com.tradework.entity.BuyShares;
+import com.tradework.entity.EquityShares;
+import com.tradework.entity.LoginEntity;
+import com.tradework.entity.SellShares;
+import com.tradework.resources.HibernateUtility;
 
 /**
  * @author Super

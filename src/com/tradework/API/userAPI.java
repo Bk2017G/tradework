@@ -1,29 +1,27 @@
 /**
  * 
  */
-package src.com.tradework.API;
+package com.tradework.API;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
-import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import src.com.tradework.bean.LoginBean;
-import src.com.tradework.business.service.LoginService;
-import src.com.tradework.resources.AppConfig;
-import src.com.tradework.resources.Factory;
-import src.com.tradework.resources.JSONParser;
+import com.tradework.bean.LoginBean;
+import com.tradework.business.service.LoginService;
+import com.tradework.resources.AppConfig;
+import com.tradework.resources.Factory;
+import com.tradework.resources.JSONParser;
 
 @Path("api")
 public class userAPI{
 	@GET
-    @Produces("text/plain")
+    @Produces(MediaType.TEXT_HTML)
     public String getHello() {
         return "<html><head><title>API OF TRADEWORK</title></head><body>If you are here just for fun we can show you awesome fun</body></html>";
     }
@@ -39,7 +37,7 @@ public class userAPI{
 			try {
 				
 				LoginBean loginBean = JSONParser.fromJson( dataRecieved ,LoginBean.class);
-
+				System.out.println(loginBean.getUserName()+" "+loginBean.getMessage());
 				LoginService service = Factory.createLoginService();
 
 				LoginBean bean = service.getLogin(loginBean);
@@ -62,6 +60,7 @@ public class userAPI{
 				response=Response.status(Status.OK).entity(returnString).build();
 				}//try
 			catch(Exception e) {
+				e.printStackTrace();
 				String errorMessage = AppConfig.PROPERTIES.getProperty(e
 						.getMessage());
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src.com.tradework.resources;
+package com.tradework.resources;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
@@ -42,6 +42,7 @@ public class HibernateUtility {
 				sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			DOMConfigurator.configure("src/com/tradework/resources/log4j.xml");
 			Logger logger=Logger.getLogger(HibernateUtility.class);
 			logger.debug(e.getMessage(),e);

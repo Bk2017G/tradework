@@ -1,7 +1,7 @@
 /**
  * 
  */
-package src.com.tradework.webApp;
+package com.tradework.webApp;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,7 +9,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import src.com.tradework.API.userAPI;
+import com.tradework.API.userAPI;
 
 /**
  * @author Anindya Chakraborty

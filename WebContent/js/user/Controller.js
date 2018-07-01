@@ -10,7 +10,7 @@ application.controller("LoginController",
 				var data = JSON.stringify($scope.loginUser);
 				alert(data);
 				$scope.loginUser.message=null;
-				$http.post(URI+"Login",data).then(function(response) {
+				$http.post(URI+"/Login",data).then(function(response) {
 					alert(response.data.message);
 					if(response.data.userName==$scope.loginUser.userName){
 						swal({title:response.data.message,text:"click ok to proceed",type:"success"},

@@ -1,13 +1,13 @@
 /**
  * 
  */
-package src.com.tradework.DAO;
+package com.tradework.DAO;
 
 import java.util.List;
 
-import src.com.tradework.bean.EquitySharesBean;
-import src.com.tradework.bean.LoginBean;
-import src.com.tradework.entity.*;
+import com.tradework.bean.EquitySharesBean;
+import com.tradework.bean.LoginBean;
+import com.tradework.entity.*;
 
 /**
  * @author Super
