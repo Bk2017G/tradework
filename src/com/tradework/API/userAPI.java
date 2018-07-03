@@ -96,24 +96,27 @@ public class userAPI{
 		public Response getAccessCode(@PathParam("apiKey") String apikey,@PathParam("apiSecret") String apiSecret) {
 			String baseURL="https://api.upstox.com/index/dialog/authorize/";
 			Client client =JerseyClientBuilder.newClient();
-			String authCode = null;
+//			String authCode = null;
 			OAuthClientRequest request = null;
 			String redirect_uri="http://localhost:8080/TradeWork/api/getUpstoxAccessCode";
 			try {
 				request = OAuthClientRequest.authorizationLocation(baseURL)
 						.setParameter("apiKey", apikey)
 						.setRedirectURI(redirect_uri).setResponseType("code").buildQueryMessage();
+				System.out.println(request.getLocationUri());
 			} catch (OAuthSystemException e1) {
 				System.out.println("******************1******************************");
 				e1.printStackTrace();
 			}
 			WebTarget target= null;
 			try {
+				System.out.println(request.getLocationUri());
 				target = client.target(new URI(request.getLocationUri()));
 			} catch (URISyntaxException e1) {
 				System.out.println("----------------2------------------");
 				e1.printStackTrace();
 			}
+			System.out.println(request.getLocationUri());
 			try {
 				return Response.status(Status.MOVED_PERMANENTLY).location(new URI(request.getLocationUri())).build();
 			} catch (URISyntaxException e) {
@@ -160,13 +163,13 @@ public class userAPI{
 		@Produces(MediaType.APPLICATION_JSON)
 		public String getAccessJSON(@QueryParam("code") String code) {
 			String tokenURI = "https://api.upstox.com/index/oauth/token";
-			String redirect_uri="http://localhost:8080/TradeWork/api/getUpstoxAccessCode";
+			String redirect_uri="http://localhost:8080/TradeWork/api/getUpstoxAccessToken";
 			String apiSecret = "lvanalaoeb";
 			OAuthClientRequest request2 = null;
 			Client client =JerseyClientBuilder.newClient();
 			Response response = null;
 			try {
-				request2 = OAuthClientRequest.tokenLocation(tokenURI).setClientSecret(apiSecret).setGrantType(GrantType.AUTHORIZATION_CODE)
+				request2 = OAuthClientRequest.tokenLocation(tokenURI).setParameter("apiSecret", apiSecret).setGrantType(GrantType.AUTHORIZATION_CODE)
 						.setCode(code).setRedirectURI(redirect_uri).buildQueryMessage();
 				System.out.println(request2.getLocationUri());
 			} catch (OAuthSystemException e) {
@@ -197,6 +200,13 @@ public class userAPI{
 		private String getLoginSuccess(LoginBean loginBean) {
 			String message=AppConfig.PROPERTIES.getProperty("ADMINAPI.SIGNIN_SUCCESS");
 			return message;
+		}
+		@Path("/getUpstoxAccessToken")
+		@POST
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Produces(MediaType.TEXT_PLAIN)
+		public String getAccessToken(String data) {
+			return data;
 		}
 }
 
