@@ -6,6 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/super/Downloads/sqljdbc_6.4.0.0_enu/sqljdbc_6.4/enu/mssql-jdbc-6.4.0.jre8.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/antlr-2.7.7.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/aopalliance-repackaged-2.5.0-b32.jar"/>
@@ -41,12 +42,18 @@
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/jersey-media-jaxb.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/jersey-server.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/log4j-1.2.17.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.authzserver-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.client-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.common-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.httpclient4-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.resourceserver-1.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.apache.oltu.oauth2.resourceserver-filter-1.0.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/org.osgi.core-4.2.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/osgi-resource-locator-1.0.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/persistence-api-1.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/slf4j-api-1.6.1.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/validation-api-1.1.0.Final.jar"/>
 	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/xml-apis-1.0.b2.jar"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="lib" path="J:/JAR_FINAL/jettison-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

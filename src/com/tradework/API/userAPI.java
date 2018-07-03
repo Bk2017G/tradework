@@ -7,6 +7,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
+import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
+import org.apache.oltu.oauth2.common.message.types.GrantType;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+import org.glassfish.jersey.client.JerseyClientBuilder;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -16,9 +23,11 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.WebTarget;
 
 import com.tradework.bean.LoginBean;
-import com.tradework.bean.UpstoxLoginBean;
 import com.tradework.business.service.LoginService;
 import com.tradework.resources.AppConfig;
 import com.tradework.resources.Factory;
@@ -81,29 +90,104 @@ public class userAPI{
 			}
 		return response;		
 		}
-		@Path("/getUpstoxData/{apiKey}")
-		public Response getAccessCode(@PathParam("apiKey") String apikey) {
-//			Response response=null;
-//			UpstoxLogi
+		@Path("/getUpstoxData/{apiKey}/{apiSecret}")
+		@GET
+		@Produces(MediaType.TEXT_HTML)
+		public Response getAccessCode(@PathParam("apiKey") String apikey,@PathParam("apiSecret") String apiSecret) {
+			String baseURL="https://api.upstox.com/index/dialog/authorize/";
+			Client client =JerseyClientBuilder.newClient();
+			String authCode = null;
+			OAuthClientRequest request = null;
 			String redirect_uri="http://localhost:8080/TradeWork/api/getUpstoxAccessCode";
-			
-			URI uri = null;
 			try {
-				uri = new URI("https://api.upstox.com/index/dialog/authorize/?apiKey="+apikey+"&redirect_uri="+redirect_uri+"&response_type=302");
+				request = OAuthClientRequest.authorizationLocation(baseURL)
+						.setParameter("apiKey", apikey)
+						.setRedirectURI(redirect_uri).setResponseType("code").buildQueryMessage();
+			} catch (OAuthSystemException e1) {
+				System.out.println("******************1******************************");
+				e1.printStackTrace();
+			}
+			WebTarget target= null;
+			try {
+				target = client.target(new URI(request.getLocationUri()));
+			} catch (URISyntaxException e1) {
+				System.out.println("----------------2------------------");
+				e1.printStackTrace();
+			}
+			try {
+				return Response.status(Status.MOVED_PERMANENTLY).location(new URI(request.getLocationUri())).build();
 			} catch (URISyntaxException e) {
-				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return Response.status(Status.INTERNAL_SERVER_ERROR).build();
+			}
+			/*Response response = target.request(MediaType.TEXT_HTML).get();
+			String responseString = response.readEntity(String.class);
+			System.out.println("**********************RESPONSE STrting************"+responseString);
+			JSONObject jsonObject;
+			try {
+				jsonObject = new JSONObject(responseString);
+				JSONObject queryParameters = jsonObject.getJSONObject("queryParameters");
+				if(queryParameters!=null) {
+					
+					authCode=queryParameters.getString("code");
+				}
+			} catch (JSONException e1) {
+				System.out.println("+++++++++++++++++++++3+++++++++++++++++++");
+				e1.printStackTrace();
+			}
+			OAuthClientRequest request2 = null;
+			String tokenURI = "https://api.upstox.com/index/oauth/token";
+			try {
+				request2 = OAuthClientRequest.tokenLocation(tokenURI).setClientSecret(apiSecret).setGrantType(GrantType.AUTHORIZATION_CODE)
+						.setCode(authCode).setRedirectURI(redirect_uri).buildQueryMessage();
+			} catch (OAuthSystemException e) {
+				System.out.println("===============4===================");
 				e.printStackTrace();
 			}
-			System.out.println("MOVED");
-			return Response.status(Status.MOVED_PERMANENTLY).location(uri).build();
+			try {
+				client.target(new URI(request2.getLocationUri()));
+				response= target.request(MediaType.APPLICATION_JSON).get();
+			} catch (URISyntaxException e) {
+				System.out.println("_-___----_---ACCESS TOKEN ERROR---_---____--");
+				e.printStackTrace();
+			}
+//			GitHubTokenResponse tokenResponse = OAuthClient.accessToken(request2,GitHubTokenResponse.class);
+			return response;*/
 		}
 		
 		@Path("/getUpstoxAccessCode")
 		@GET
-		@Consumes(MediaType.APPLICATION_JSON)
-		@Produces(MediaType.TEXT_PLAIN)
-		public String getAccessJSON(String dataRecieved) {
-			return dataRecieved;
+		@Produces(MediaType.APPLICATION_JSON)
+		public String getAccessJSON(@QueryParam("code") String code) {
+			String tokenURI = "https://api.upstox.com/index/oauth/token";
+			String redirect_uri="http://localhost:8080/TradeWork/api/getUpstoxAccessCode";
+			String apiSecret = "lvanalaoeb";
+			OAuthClientRequest request2 = null;
+			Client client =JerseyClientBuilder.newClient();
+			Response response = null;
+			try {
+				request2 = OAuthClientRequest.tokenLocation(tokenURI).setClientSecret(apiSecret).setGrantType(GrantType.AUTHORIZATION_CODE)
+						.setCode(code).setRedirectURI(redirect_uri).buildQueryMessage();
+				System.out.println(request2.getLocationUri());
+			} catch (OAuthSystemException e) {
+				System.out.println("===============4===================");
+				e.printStackTrace();
+			}
+			WebTarget target= null;
+			try {
+				target = client.target(new URI(request2.getLocationUri()));
+			} catch (URISyntaxException e1) {
+				System.out.println("----------------2------------------");
+				e1.printStackTrace();
+			}
+			try {
+				client.target(new URI(request2.getLocationUri()));
+				response= target.request(MediaType.APPLICATION_JSON).get();
+			} catch (URISyntaxException e) {
+				System.out.println("_-___----_---ACCESS TOKEN ERROR---_---____--");
+				e.printStackTrace();
+			}
+			return response.readEntity(String.class);
 		}
 		private String getLoginFailure(LoginBean loginBean) {
 			// TODO Auto-generated method stub
